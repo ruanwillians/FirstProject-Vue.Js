@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Matador de Monstro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="gamers">
+            <div class="player-panel">
+                <h1>Player</h1>
+                <div class="life">
+                    <div class='life-percent-player' class='danger' :class="{danger: playerLife < 20}" :style="{width:playerLife + '%'}" ></div>
+                    {{integerPlayerLife()}}%
+                </div>
+            </div>
+
+            <div class="monster-panel">
+                <h1>Monstro</h1>
+                <div class="life">
+                    <div class='life-percent-player' :class="{danger: monsterLife < 20}" :style="{width:monsterLife + '%'}"></div>
+                </div>
+                {{integerMonsterLife()}}%
+            </div>
+        </div>  
+
+        <div v-if="hasResult" class="result-panel">
+            <h1 v-if="monsterLife === 0">Você ganhou</h1>
+            <h1 v-else>Você perdeu</h1>
+        </div>
+
+        <div class="comands">
+            <button v-if="!playing" id="iniciar" @click="start">Iniciar jogo</button>
+            <span v-else-if="playing && !hasResult">
+                <button id="atacar" @click="atack()">atacar</button>
+                <button id="super" @click="superAtack">super ataque</button>
+                <button id="curar" @click="healAndHurt">curar</button>
+                <button id="desistir" @click="playing = !playing">Desistir do jogo</button>
+            </span>
+            <button v-else @click="start">Reiniciar</button>
+        </div>
+
+        <div class="messages" v-if="log.length">
+            <ul>
+                <li v-for="logs in log" :class="logs.cls">{{logs.msg}}</li>
+            </ul>
+
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

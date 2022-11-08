@@ -1,0 +1,124 @@
+/* Geral */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.player-panel .monster-panel{
+    display: flex;
+    flex-direction: column;
+}
+
+.gamers {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 3em;
+}
+
+.life {
+    width: 200px;
+    height: 25px;
+    border: 1px solid #000;
+}
+
+.life-percent-player {
+    height: 100%;
+    background-color: chartreuse;
+}
+
+.life-percent-player.danger {
+    background-color: red;
+}
+
+.comands, .messages {
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+}
+
+.messages {
+    flex-direction: column;
+}
+
+.monster {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+    background-color: red;
+    color: #fff;
+}
+
+.player {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+    background-color: chartreuse;
+    color: #000;
+}
+
+button{
+    height: 2em;
+    margin: 1em;
+    border: none;
+    border-radius: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: .5em 2em;
+}
+
+.result-panel {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 1em;
+        color: #000;
+}
+
+#iniciar {
+    background-color: blue;
+    color: #fff;
+}
+
+#atacar {
+    background-color: chartreuse;
+    color: #000;
+}
+
+#super {
+    background-color: red;
+    color: #fff;
+}
+
+#curar {
+    background-color: yellow;
+    color: #000;
+}
+
+#desistir{
+    background-color: #999;
+    color: #000;
+}
+
+
+
